@@ -1,24 +1,13 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// state using our library in our client application
+// we have to somehow import our library into this application without acutally publishing our package in the npm registry
+// now I'm going to make our lib globally available in the operating system, and npm allow us to do that by
+// executing the following comment inside of that library that we have to make globally available and this
+import { plunk } from "plunk";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const users = [
+  { name: "AAA", age: 10 },
+  { name: "VV", age: 20 },
+  { name: "CCC", age: 30 },
+];
 
-setupCounter(document.querySelector('#counter'))
+console.log(plunk(users, "name"));
